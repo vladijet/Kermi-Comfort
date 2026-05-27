@@ -126,18 +126,20 @@
 
   /* ========== СРАВНЕНИЕ ========== */
   .compare { background: var(--white); }
-  .compare-table { margin-top: 48px; overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .compare-table { margin-top: 48px; overflow-x: auto; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.07); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
   thead tr { background: var(--dark); }
-  thead th { color: var(--white); padding: 14px 20px; text-align: left; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-  thead th:nth-child(2) { background: #c0392b; }
-  thead th:nth-child(3) { background: #2e7d32; }
-  tbody tr:nth-child(even) { background: var(--lgrey); }
-  tbody td { padding: 13px 20px; border-bottom: 1px solid var(--mgrey); vertical-align: middle; }
-  tbody td:first-child { font-weight: 600; }
-  .td-bad { color: var(--red); }
-  .td-good { color: var(--green); font-weight: 600; }
-  .td-neutral { color: var(--grey); }
+  thead th { color: var(--white); padding: 16px 24px; text-align: left; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+  thead th:nth-child(2) { background: var(--dark); color: var(--lime); border-left: 3px solid var(--lime); }
+  tbody tr { transition: background .15s; }
+  tbody tr:nth-child(even) { background: #f8f9fa; }
+  tbody tr:hover { background: #f0f4e8; }
+  tbody td { padding: 15px 24px; border-bottom: 1px solid #e8e8e8; vertical-align: middle; color: #1a1a1a; }
+  tbody td:first-child { font-weight: 600; color: #333; width: 40%; }
+  tbody td:nth-child(2) { border-left: 3px solid var(--lime); }
+  .td-bad { color: #1a1a1a; }
+  .td-good { color: #1a1a1a; font-weight: 500; }
+  .td-neutral { color: #555; }
 
   /* ========== МОДЕЛИ ========== */
   .models { background: var(--lgrey); }
@@ -182,7 +184,7 @@
   }
   .model-spec:last-child { border-bottom: none; }
   .model-spec-key { color: var(--grey); white-space: nowrap; flex-shrink: 0; margin-right: 8px; }
-  .model-spec-val { font-weight: 600; text-align: right; }
+  .model-spec-val { font-weight: 600; text-align: right; white-space: nowrap; }
   .model-note { font-size: 11px; color: var(--red); margin-top: 12px; line-height: 1.4; }
   .model-note-green { font-size: 11px; color: var(--green); margin-top: 12px; line-height: 1.4; }
 
@@ -436,7 +438,7 @@
   </div>
   <div class="nav-links">
     <a href="#production">Производство</a>
-    <a href="#compare">Отличия от therm x2</a>
+    <a href="#compare">Преимущества</a>
     <a href="#models">Модели</a>
     <a href="#article">Артикул</a>
     <a href="#mounting">Крепления</a>
@@ -485,7 +487,7 @@
       <div class="hero-tag">Новинка 2026</div>
       <h1>Стальные панельные<br>радиаторы<br><span>KERMI Комфорт</span></h1>
       <p class="hero-sub">
-        Производство по лицензии KERMI GmbH на заводе «Лемакс» (Таганрог).
+        Производство в России по лицензии KERMI GmbH на новейшей автоматизированной линии.
         Новое поколение — сталь CORREX, 100 мкм покрытие, 150+ цветов RAL, гарантия 15 лет.
       </p>
       <div class="hero-btns">
@@ -525,8 +527,8 @@
         <div class="prod-item">
           <div class="prod-icon"></div>
           <div class="prod-item-text">
-            <h4>Завод ООО «Лемакс», Таганрог</h4>
-            <p>ТОП-3 производителей стальных панельных радиаторов в России по данным Litvinchuk Marketing 2024</p>
+            <h4>Производство в России</h4>
+            <p>Производственный процесс настроен под контролем немецких инженеров из центрального офиса компании Керми.</p>
           </div>
         </div>
         <div class="prod-item">
@@ -559,10 +561,10 @@
         </div>
       </div>
       <div>
-        <img src="https://media.base44.com/images/public/69f20cdd1ade181e43a31fad/936b11819_Lemaxleas.jpg" alt="Производственная линия LEAS на заводе Лемакс"
+        <img src="https://media.base44.com/images/public/69f20cdd1ade181e43a31fad/936b11819_Lemaxleas.jpg" alt="Новейшая автоматизированная производственная линия"
              style="width:100%;border-radius:2px;display:block;box-shadow:0 8px 32px rgba(0,0,0,.4);">
         <p style="font-size:12px;color:#666;margin-top:10px;text-align:center;">
-          Автоматизированная линия LEAS S.p.A. — завод ООО «Лемакс», г. Таганрог
+          Новейшая автоматизированная производственная линия LEAS S.p.A. (Италия)
         </p>
       </div>
     </div>
@@ -572,79 +574,73 @@
 <!-- ========== СРАВНЕНИЕ ========== -->
 <section class="compare" id="compare">
   <div class="container">
-    <div class="section-tag">Сравнение</div>
-    <h2>Комфорт vs therm x2 —<br>что изменилось?</h2>
+    <div class="section-tag">Преимущества</div>
+    <h2>Преимущества<br>Керми Комфорт</h2>
     <div class="divider"></div>
-    <p class="lead">Серия «Комфорт» — не просто переименование. Это новые материалы, технологии покраски и расширенные возможности. Но важно знать и об изменениях в размерном ряде.</p>
+    <p class="lead">Серия «Комфорт» — новая линейка стальных панельных радиаторов, компании Керми, которая разработана на основе обратной связи от российских клиентов. Учтены пожелания как по типоразмерам, продленной гарантии, удобству монтажа и срокам поставки.</p>
     <div class="compare-table">
       <table>
         <thead>
           <tr>
-            <th style="width:30%">Параметр</th>
-            <th>⬅ therm x2 (прежняя серия)</th>
-            <th>✅ Комфорт (новая серия)</th>
+            <th style="width:40%">Параметр</th>
+            <th>Преимущества и особенности</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Марка стали</td>
-            <td class="td-neutral">Обычная углеродистая сталь</td>
-            <td class="td-good">★ CORREX (Северсталь) — коррозионная стойкость ×1,5</td>
+            
+            <td class="td-good">CORREX (Северсталь) — коррозионная стойкость ×1,5</td>
           </tr>
           <tr>
             <td>Предобработка перед покраской</td>
-            <td class="td-good">★ Катафорезная грунтовка + железофосфатирование</td>
-            <td class="td-good">★ Титаноцирконевая пассивация — защита ×2</td>
+            
+            <td class="td-good">Титаноцирконевая пассивация — защита ×2</td>
           </tr>
           <tr>
             <td>Метод покраски</td>
-            <td class="td-good">★ Катафорезная (20 мкм)</td>
-            <td class="td-good">★ Порошковая эпокси-полиэфирная, электростатика + печь (100 мкм)</td>
+            
+            <td class="td-good">Порошковая эпокси-полиэфирная, электростатика + печь (100 мкм)</td>
           </tr>
           <tr>
             <td>Толщина лакокрасочного слоя</td>
-            <td class="td-neutral">20 мкм</td>
-            <td class="td-good">★ 100 мкм — в 5 раз толще</td>
+            
+            <td class="td-good">100 мкм — в 5 раз толще</td>
           </tr>
           <tr>
             <td>Цвет / палитра</td>
-            <td class="td-neutral">Только белый RAL 9016</td>
-            <td class="td-good">★ 150+ цветов RAL, глянец и матт (+50% к цене)</td>
+            
+            <td class="td-good">150+ цветов RAL, глянец и матт (+50% к цене)</td>
           </tr>
           <tr>
             <td>Гарантия</td>
-            <td class="td-neutral">10 лет</td>
-            <td class="td-good">★ 15 лет (+5 лет благодаря CORREX и новой покраске)</td>
+            
+            <td class="td-good">15 лет (+5 лет благодаря CORREX и новой покраске)</td>
           </tr>
           <tr>
             <td>Производственная линия</td>
-            <td class="td-neutral">Более 8 лет в эксплуатации</td>
-            <td class="td-good">★ Новая LEAS (Италия) — менее 1 года в эксплуатации</td>
+            
+            <td class="td-good">Новая LEAS (Италия) — менее 1 года в эксплуатации</td>
           </tr>
           <tr>
             <td>Расположение патрубков (тип 30/33)</td>
-            <td class="td-neutral">Дальше от стены (105 мм)</td>
-            <td class="td-good">★ Ближе к стене (51 мм) — эстетика и комфорт подключения</td>
+            
+            <td class="td-good">Ближе к стене (51 мм) — эстетика и комфорт подключения</td>
           </tr>
           <tr>
             <td>Переходники G½"→G¾"</td>
-            <td class="td-good">★ Вкручены на заводе</td>
-            <td class="td-bad">⚠ В комплекте, монтируются на месте мастером</td>
-          </tr>
-          <tr>
-            <td>Высота 900 мм</td>
-            <td class="td-good">★ Была доступна</td>
-            <td class="td-bad">⚠ В данный момент недоступно для заказа</td>
+            
+            <td class="td-good">В комплекте</td>
           </tr>
           <tr>
             <td>Шаг длины</td>
-            <td class="td-neutral">200–400 мм для длин &gt; 1400 мм (до 3000 мм)</td>
-            <td class="td-good">★ 100 мм от 400 до 3000 мм — точный подбор под любой проём</td>
+            
+            <td class="td-good">100 мм от 400 до 3000 мм — точный подбор под любой проём</td>
           </tr>
           <tr>
             <td>Гигиена с вентилем (PTV/PK0)</td>
-            <td class="td-neutral">H = 300, 400, 500, 600 мм</td>
-            <td class="td-bad">⚠ Только H = 300 и 500 мм</td>
+            
+            <td class="td-good">H = 300 и 500 мм</td>
           </tr>
 
 
@@ -743,6 +739,7 @@
           <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">200–600 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–3000 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
+          <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">2 × G¾" (Н-блок)</span></div>
           <div class="model-spec"><span class="model-spec-key">Вентиль</span><span class="model-spec-val">V3-Ks встроен</span></div>
           </div>
           
@@ -757,11 +754,11 @@
           <div class="model-spec"><span class="model-spec-key">Типы</span><span class="model-spec-val">12, 22, 33</span></div>
           <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">200–600 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–3000 мм</span></div>
-          <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">6 × G½"</span></div>
+          <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">4 × G½" бок.</span></div>
+          <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">2 × G¾" (Н-блок)</span></div>
           <div class="model-spec"><span class="model-spec-key">Вентиль</span><span class="model-spec-val">V3-Ks встроен</span></div>
           </div>
-          <p class="model-note">⚠ Кронштейны не входят в комплект — заказываются отдельно</p>
-          <p style="font-size:11px;color:#888;margin-top:6px;padding:0 4px">Оборачиваемый, без монтажных скоб на задней панели</p>
+          <p class="model-note-green">Кронштейны заказываются отдельно, по артикулу в зависимости от высоты</p>
         </div>
       </div>
       <div class="model-card model-card-v2" data-series="PK0" onclick="activateSeries('PK0')">
@@ -773,7 +770,8 @@
           <div class="model-spec"><span class="model-spec-key">Типы</span><span class="model-spec-val">10, 20, 30</span></div>
           <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">300, 500 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–2000 мм</span></div>
-          <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">100 мм от стены</span></div>
+          <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
+          <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">4 × G½" бок.</span></div>
           </div>
           <p class="model-note-green">Без оребрения — для больниц и детских учреждений. С гладкой лицевой поверхностью.</p>
         </div>
@@ -787,6 +785,8 @@
           <div class="model-spec"><span class="model-spec-key">Типы</span><span class="model-spec-val">10, 20, 30</span></div>
           <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">300, 500 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–2000 мм</span></div>
+          <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
+          <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">2 × G¾" (Н-блок)</span></div>
           <div class="model-spec"><span class="model-spec-key">Вентиль</span><span class="model-spec-val">V3-Ks встроен</span></div>
           </div>
           <p class="model-note-green">Без оребрения — лёгкая уборка, антиаллергенный</p>
@@ -1399,7 +1399,7 @@
       <!-- --- БЛОК 1: КОМПЛЕКТАЦИЯ --- -->
       <div style="margin-bottom:40px">
         <h3 style="font-size:18px;font-weight:900;margin:0 0 20px;padding-bottom:10px;border-bottom:2px solid var(--lime)">Комплектация</h3>
-        <div class="alert-box alert-info">✅ Кронштейны входят в комплект поставки. При длине ≤ 1600 мм — 2 кронштейна и 4 дюбеля; ≥ 1700 мм — 3 кронштейна и 6 дюбелей.</div>
+        <div class="alert-box alert-info">Кронштейны входят в комплект поставки. При длине ≤ 1600 мм — 2 кронштейна и 4 дюбеля; ≥ 1700 мм — 3 кронштейна и 6 дюбелей.</div>
         <div class="mount-grid" style="margin-top:20px">
           <div>
             <table class="mount-table">
@@ -1490,7 +1490,7 @@
       <!-- --- БЛОК 1: КОМПЛЕКТАЦИЯ --- -->
       <div style="margin-bottom:40px">
         <h3 style="font-size:18px;font-weight:900;margin:0 0 20px;padding-bottom:10px;border-bottom:2px solid var(--lime)">Комплектация</h3>
-        <div class="alert-box alert-warn">⚠ Радиаторы FTU поставляются БЕЗ кронштейнов и БЕЗ настенных кронштейнов. Заказываются отдельно по артикулу для конкретной высоты.</div>
+        <div class="alert-box alert-warn">⚠ Для универсальных радиаторов FTU кронштейны заказываются отдельно, по артикулу в зависимости от высоты.</div>
         <div class="mount-grid" style="margin-top:20px">
           <div>
             <table class="mount-table">
@@ -1537,11 +1537,11 @@
             <table class="mount-table" style="background:#fff">
               <thead><tr><th>Высота радиатора</th><th>Артикул</th><th>Применимость</th></tr></thead>
               <tbody>
-                <tr><td>H = 200 мм</td><td><strong>ZB00200</strong></td><td>FTU + FK0, тип 12/22/33</td></tr>
-                <tr><td>H = 300 мм</td><td><strong>ZB00300</strong></td><td>FTU, тип 12/22/33</td></tr>
-                <tr><td>H = 400 мм</td><td><strong>ZB00147749</strong></td><td>FTU, тип 12/22/33</td></tr>
-                <tr><td>H = 500 мм</td><td><strong>ZB00119538</strong></td><td>FTU, тип 12/22/33</td></tr>
-                <tr><td>H = 600 мм</td><td><strong>ZB00154388</strong></td><td>FTU, тип 12/22/33</td></tr>
+                <tr><td>H = 200 мм</td><td>FTU + FK0, тип 12/22/33</td></tr>
+                <tr><td>H = 300 мм</td><td>FTU, тип 12/22/33</td></tr>
+                <tr><td>H = 400 мм</td><td>FTU, тип 12/22/33</td></tr>
+                <tr><td>H = 500 мм</td><td>FTU, тип 12/22/33</td></tr>
+                <tr><td>H = 600 мм</td><td>FTU, тип 12/22/33</td></tr>
               </tbody>
             </table>
           </div>
@@ -1570,8 +1570,7 @@
       <!-- --- БЛОК 1: КОМПЛЕКТАЦИЯ --- -->
       <div style="margin-bottom:40px">
         <h3 style="font-size:18px;font-weight:900;margin:0 0 20px;padding-bottom:10px;border-bottom:2px solid var(--lime)">Комплектация</h3>
-        <div class="alert-box alert-info">✅ Гигиенические радиаторы PK0/PTV и FK0/FTV типов 10/20/30 поставляются со специальными кронштейнами, обеспечивающими расстояние 100 мм от стены (требование СНиП).</div>
-        <div class="alert-box alert-err" style="margin-top:12px">⚠ Гигиенические серии PK0/PTV доступны только высотами 300 и 500 мм (длины до 2000 мм).</div>
+        <div class="alert-box alert-info">Гигиенические радиаторы PK0/PTV и FK0/FTV типов 10/20/30 поставляются со специальными кронштейнами, обеспечивающими расстояние 100 мм от стены (требование СНиП).</div>
         <div class="mount-grid" style="margin-top:20px">
           <div>
             <table class="mount-table">
@@ -1778,7 +1777,7 @@ function switchSelTab(tab) {
                         <div class="warranty-li-text"><strong>Гарантийный срок — 15 лет с даты изготовления</strong>Дата нанесена на обратной стороне нижнего сварочного шва каждого радиатора.</div>
           </div>
           <div class="warranty-li">
-                        <div class="warranty-li-text"><strong>Изготовитель: ООО «Лемакс», Таганрог</strong>Изготовлено по заказу: ООО «КЛИВЕТ» (представительство KERMI GmbH). ГОСТ 31311-2022.</div>
+                        <div class="warranty-li-text"><strong>Производство в России</strong>Изготовлено по заказу и лицензии KERMI GmbH на новейшей автоматизированной линии. ГОСТ 31311-2022.</div>
           </div>
           <div class="warranty-li">
                         <div class="warranty-li-text"><strong>Для гарантийного случая необходимо:</strong>Паспорт радиатора, акт ввода в эксплуатацию, правильно заполненный сопроводительный талон.</div>
@@ -1823,7 +1822,7 @@ function switchSelTab(tab) {
     <h4>Разделы</h4>
     <ul>
       <li><a href="#production">Производство</a></li>
-      <li><a href="#compare">Отличия от therm x2</a></li>
+      <li><a href="#compare">Преимущества</a></li>
       <li><a href="#models">Модельный ряд</a></li>
       <li><a href="#article">Артикул</a></li>
       <li><a href="#mounting">Крепления</a></li>
