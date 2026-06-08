@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109718380', 'ym');
+
+    ym(109718380, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109718380" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
   <link rel="icon" type="image/png" href="https://base44.app/api/apps/69f20cdd1ade181e43a31fad/files/mp/public/69f20cdd1ade181e43a31fad/09bc27849_8a30c3817_favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -188,6 +201,11 @@
   .model-spec-val { font-weight: 600; text-align: right; white-space: nowrap; }
   .model-note { font-size: 11px; color: var(--red); margin-top: 12px; line-height: 1.4; }
   .model-note-green { font-size: 11px; color: var(--green); margin-top: 12px; line-height: 1.4; }
+  .model-note-info {
+    font-size: 11px; color: #aaa; font-style: italic;
+    line-height: 1.4; display: block;
+    margin: 10px 0 0 0; width: 100%;
+  }
 
   /* ========== АРТИКУЛ ========== */
   .article-section { background: var(--white); }
@@ -722,7 +740,8 @@
       }
       .model-card-v2.active { border-color: var(--lime); box-shadow: 0 8px 32px rgba(191,222,0,.2); }
       .model-card-v2:hover { border-color: var(--lime); transform: translateY(-3px); }
-      .model-card-v2 .model-card-body { padding: 20px; }
+      .model-card-v2 { display: flex; flex-direction: column; }
+      .model-card-v2 .model-card-body { padding: 20px 20px 0; display: flex; flex-direction: column; flex: 1; }
 
       /* Таблица типов */
       .type-selector-wrap { margin-top: 40px; }
@@ -778,12 +797,12 @@
           <span class="model-badge badge-green">Боковое подключение</span>
           <div class="model-specs">
           <div class="model-spec"><span class="model-spec-key">Типы</span><span class="model-spec-val">10, 11, 12, 20, 22, 30, 33</span></div>
-          <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">300–600 мм</span></div>
+          <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">200–600 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–3000 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
           <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">4 × G½" бок.</span></div>
+          <p class="model-note-info">Высота 200 мм поставляется без кронштейнов</p>
           </div>
-          
         </div>
       </div>
       <div class="model-card model-card-v2" data-series="FTV" onclick="activateSeries('FTV')">
@@ -793,13 +812,13 @@
           <span class="model-badge badge-blue">Нижнее подключение</span>
           <div class="model-specs">
           <div class="model-spec"><span class="model-spec-key">Типы</span><span class="model-spec-val">10, 11, 12, 20, 22, 30, 33</span></div>
-          <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">200–600 мм</span></div>
+          <div class="model-spec"><span class="model-spec-key">Высоты</span><span class="model-spec-val">300–600 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–3000 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
           <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">2 × G¾" (Н-блок)</span></div>
           <div class="model-spec"><span class="model-spec-key">Вентиль</span><span class="model-spec-val">V3-Ks встроен</span></div>
+          <p class="model-note-info" style="visibility:hidden;">placeholder</p>
           </div>
-          
         </div>
       </div>
       <div class="model-card model-card-v2" data-series="FTU" onclick="activateSeries('FTU')">
@@ -814,8 +833,8 @@
           <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">4 × G½" бок.</span></div>
           <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">2 × G¾" (Н-блок)</span></div>
           <div class="model-spec"><span class="model-spec-key">Вентиль</span><span class="model-spec-val">V3-Ks встроен</span></div>
+          <p class="model-note-info">Кронштейны заказываются отдельно, по артикулу в зависимости от высоты</p>
           </div>
-          <p class="model-note-green">Кронштейны заказываются отдельно, по артикулу в зависимости от высоты</p>
         </div>
       </div>
       <div class="model-card model-card-v2" data-series="PK0" onclick="activateSeries('PK0')">
@@ -829,8 +848,8 @@
           <div class="model-spec"><span class="model-spec-key">Длины</span><span class="model-spec-val">400–2000 мм</span></div>
           <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
           <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">4 × G½" бок.</span></div>
+          <p class="model-note-info">Без оребрения — для больниц и детских учреждений. С гладкой лицевой поверхностью.</p>
           </div>
-          <p class="model-note-green">Без оребрения — для больниц и детских учреждений. С гладкой лицевой поверхностью.</p>
         </div>
       </div>
       <div class="model-card model-card-v2" data-series="PTV" onclick="activateSeries('PTV')">
@@ -845,8 +864,8 @@
           <div class="model-spec"><span class="model-spec-key">Кронштейны</span><span class="model-spec-val">В комплекте</span></div>
           <div class="model-spec"><span class="model-spec-key">Присоединение</span><span class="model-spec-val">2 × G¾" (Н-блок)</span></div>
           <div class="model-spec"><span class="model-spec-key">Вентиль</span><span class="model-spec-val">V3-Ks встроен</span></div>
+          <p class="model-note-info">Без оребрения — для больниц и детских учреждений. С гладкой лицевой поверхностью.</p>
           </div>
-          <p class="model-note-green">Без оребрения — лёгкая уборка, антиаллергенный</p>
         </div>
       </div>
     </div>
