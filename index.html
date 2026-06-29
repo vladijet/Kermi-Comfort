@@ -479,7 +479,7 @@
   }
 
   @media (max-width: 768px) {
-    #sel-tabs-wrapper { display: none; }
+    #sel-tabs-wrapper { display: block; }
   }
 </style>
 </head>
@@ -1735,41 +1735,29 @@
     <div class="divider"></div>
 
 
-    <!-- Таб-переключатель -->
-    <div id="sel-tabs-wrapper">
-    <div style="display:flex;gap:0;border-bottom:2px solid #e0e0e0;margin-bottom:32px">
-      <button id="sel-tab-config" onclick="switchSelTab('config')" class="sel-tab sel-tab-active">Конфигуратор подбора</button>
-      <button id="sel-tab-resel" onclick="switchSelTab('resel')" class="sel-tab">Сервис переподбора</button>
+    <!-- Виджет конфигуратора подбора -->
+    <div style="width:100%;border-radius:12px;overflow:hidden;-webkit-overflow-scrolling:touch;">
+      <iframe
+        src="https://kermi-heat-pick.base44.app/embed?uid=cafdc5eb-2a56-4b25-b884-d5b640c92363"
+        style="width:100%;min-width:0;height:1000px;border:0;display:block;"
+        title="Kermi Comfort — подбор радиаторов"
+        scrolling="yes"
+        allowfullscreen
+      ></iframe>
     </div>
-
-    <!-- Раздел 1: Конфигуратор подбора -->
-    <div id="sel-panel-config">
-      
-      <iframe src="https://kermi-heat-pick.base44.app/embed?uid=cafdc5eb-2a56-4b25-b884-d5b640c92363" style="width:100%;height:1000px;border:0;display:block;border-radius:12px;overflow:hidden;" title="Kermi Comfort — подбор радиаторов"></iframe>
-    </div>
-
-    <!-- Раздел 2: Сервис переподбора -->
-    <div id="sel-panel-resel" style="display:none">
-      <p style="font-size:14px;color:var(--grey);margin-bottom:24px">Позволяет сделать переподбор на Kermi с любого бренда за 2 минуты при любом количестве строк в спецификации. Скоро будет доступен.</p>
-      <div style="max-width:680px;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08)">
-        <img src="https://base44.app/api/apps/69f20cdd1ade181e43a31fad/files/mp/public/69f20cdd1ade181e43a31fad/45d0acfe3_Kermik_green.png" alt="Сервис переподбора — Умный бот Kermik" style="width:100%;display:block">
-      </div>
-    </div>
-    </div><!-- /sel-tabs-wrapper -->
+    <style>
+      @media (max-width: 768px) {
+        #selection iframe { height: 1200px !important; }
+      }
+      @media (max-width: 480px) {
+        #selection iframe { height: 1400px !important; }
+      }
+    </style>
 
   </div>
 </section>
 
-<script>
-function switchSelTab(tab) {
-  document.getElementById('sel-panel-config').style.display = tab === 'config' ? '' : 'none';
-  document.getElementById('sel-panel-resel').style.display = tab === 'resel' ? '' : 'none';
-  document.getElementById('sel-tab-config').className = tab === 'config' ? 'sel-tab sel-tab-active' : 'sel-tab';
-  
-  document.getElementById('sel-tab-resel').className = tab === 'resel' ? 'sel-tab sel-tab-active' : 'sel-tab';
-  
-}
-</script>
+
 
 <!-- ========== ЦВЕТА RAL ========== -->
 <section class="colors" id="colors">
