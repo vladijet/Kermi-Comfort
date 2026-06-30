@@ -481,6 +481,67 @@
   @media (max-width: 768px) {
     #sel-tabs-wrapper { display: block; }
   }
+
+  /* ===== DEALERS ===== */
+  .dealer-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+  .dealer-icon { font-size: 14px; line-height: 1.5; flex-shrink: 0; }
+  .dealers { background: var(--white); padding: 80px 0; }
+  .dealers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .dealer-city-block {}
+  .dealer-city-name {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--dark);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--lime);
+    display: inline-block;
+  }
+  .dealer-card {
+    background: var(--lgrey);
+    border-radius: 10px;
+    padding: 20px 20px;
+  }
+  .dealer-name {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .dealer-name a {
+    color: var(--dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--lime);
+    transition: color .2s;
+  }
+  .dealer-name a:hover { color: var(--lime); }
+  .dealer-addr {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .dealer-phone a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .dealer-phone a:hover { color: var(--lime); }
+  @media (max-width: 900px) {
+    .dealers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .dealers-grid { grid-template-columns: 1fr; }
+    .dealers { padding: 48px 0; }
+  }
 </style>
 </head>
 <body>
@@ -499,6 +560,7 @@
     <a href="#selection">Конфигуратор подбора</a>
     <a href="#colors">Цвета RAL</a>
     <a href="#warranty">Гарантия</a>
+    <a href="#dealers">Где купить</a>
     <a href="#footer" class="nav-cta">Связаться</a>
   </div>
 </nav>
@@ -1869,6 +1931,90 @@
 </section>
 
 <!-- ========== FOOTER ========== -->
+<!-- ========== ГДЕ КУПИТЬ ========== -->
+<section class="dealers" id="dealers">
+  <div class="container">
+    <div class="section-tag">Где купить</div>
+    <h2>Официальные дилеры</h2>
+    <div class="divider"></div>
+
+    
+    <div class="dealers-grid">
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Москва</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">141033, Московская область, г/о Мытищи, пос. Кардо-Лента, ул. Южная, стр. 1, а/я 609</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:pochta@masterwatt.ru" style="color:var(--grey);text-decoration:none">pochta@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+74957302299">+7 (495) 730-22-99</a></div></div>
+        </div>
+      </div>
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Московская область</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">г. Истра, ул. Московская, д. 47А, ТЦ «Жемчужина», второй этаж</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:istra@masterwatt.ru" style="color:var(--grey);text-decoration:none">istra@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+79030133813">+7 (903) 013-38-13</a></div></div>
+        </div>
+      </div>
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Санкт-Петербург</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">196128, г. Санкт-Петербург, ул. Варшавская, д. 5, корп. 2, лит. А, офис 313</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:spb@masterwatt.ru" style="color:var(--grey);text-decoration:none">spb@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+78126776436">+7 (812) 677-64-36</a></div></div>
+        </div>
+      </div>
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Самара</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">ул. Партизанская, д. 33</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:samara@masterwatt.ru" style="color:var(--grey);text-decoration:none">samara@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+78469736060">+7 (846) 973-60-60</a></div></div>
+        </div>
+      </div>
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Екатеринбург</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">ул. Майкопская, 10, офис 203А</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:ekaterinburg@masterwatt.ru" style="color:var(--grey);text-decoration:none">ekaterinburg@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+73432878791">+7 (343) 287-87-91</a></div></div>
+        </div>
+      </div>
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Краснодар</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">Новороссийская, 250А</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:krasnodar@masterwatt.ru" style="color:var(--grey);text-decoration:none">krasnodar@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+78612125959">+7 (861) 212-59-59</a></div></div>
+        </div>
+      </div>
+
+      <div class="dealer-city-block">
+        <div class="dealer-city-name">Новосибирск</div>
+        <div class="dealer-card">
+          <div class="dealer-name"><a href="https://masterwatt.ru" target="_blank">Мастер Ватт</a></div>
+          <div class="dealer-row"><span class="dealer-icon">📍</span><span class="dealer-addr">ул. Ватутина, д. 38/3</span></div>
+          <div class="dealer-row"><span class="dealer-icon">✉️</span><span class="dealer-addr"><a href="mailto:novosibirsk@masterwatt.ru" style="color:var(--grey);text-decoration:none">novosibirsk@masterwatt.ru</a></span></div>
+          <div class="dealer-row"><span class="dealer-icon">📞</span><div class="dealer-phone"><a href="tel:+73833991122">+7 (383) 399-11-22</a></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer id="footer">
   <div class="footer-brand">
     <img src="https://media.base44.com/images/public/69f20cdd1ade181e43a31fad/26e20f0a6_Kermi-Logo_t.png" alt="KERMI" style="height:36px;filter:brightness(0) invert(1);margin-bottom:8px">
